@@ -52,7 +52,7 @@ public class InvokeGroovy {
         Object value = engine.eval("if(age < 18){'未成年'}else{'成年'}", bindings);
         assert value.equals("成年");
 
-        engine.eval(new FileReader("/Users/chaoli/intellijWrkSpace/HelloGroovy/src/hello/groovy/com.wolf.reg.test.groovy"), bindings);
+        engine.eval(new FileReader("/Users/chaoli/intellijWrkSpace/groovydemo/src/com/wolf/reg/test.groovy"), bindings);
     }
 
     private static void useGroovyScriptEngine() throws IOException, ResourceException, ScriptException, InterruptedException {

@@ -36,8 +36,10 @@ int[] array = [1, 2, 3]
 array[2] = 1
 println(array)
 
+var path = "/Users/chaoli/intellijWrkSpace/groovydemo/src/com/wolf/reg"
+
 // 4 ARM（Automatic Resource Management，自动资源管理）语句块
-new File("/Users/chaoli/intellijWrkSpace/HelloGroovy/src/hello/groovy/reg/testreg.groovy").eachLine('Utf-8') {
+new File(path + "/testreg.groovy").eachLine('Utf-8') {
     line, nb ->
         println "line $line, $nb"
 }
@@ -347,8 +349,7 @@ process.in.eachLine { line ->
 }
 
 // 由于一些本地平台仅为标准输入和输出流提供有限的缓冲区大小，因此无法及时写入输入流或读取子过程的输出流可能导致子过程阻塞甚至死锁
-
-def p = "ls -l".execute([], new File("/Users/chaoli/intellijWrkSpace/HelloGroovy/src/hello/groovy/"))
+def p = "ls -l".execute([], new File(path))
 p.consumeProcessOutput()
 p.waitFor()
 println p.text
@@ -433,7 +434,7 @@ assert x == "!"
 assert text[-7..-2] == "gromit"
 
 // 24 io
-def file = new File("/Users/chaoli/intellijWrkSpace/HelloGroovy/src/hello/groovy/reg", "test.groovy")
+def file = new File(path, "test.groovy")
 file.eachLine { line ->
     println line
 }
@@ -466,7 +467,7 @@ file.withOutputStream { stream ->
 }
 
 // 遍历文件树
-def dir = new File('/Users/chaoli/intellijWrkSpace/HelloGroovy/src/hello/groovy/reg')
+def dir = new File(path)
 dir.eachFile { f ->
     println f.name
 }

@@ -5,7 +5,7 @@ package com.wolf.reg
 //
 
 
-def filePath = "/Users/chaoli/intellijWrkSpace/HelloGroovy/src/hello/groovy"
-new File(filePath, "com.wolf").eachLine { line ->
+def filePath = "/Users/chaoli/intellijWrkSpace/groovydemo/src/com/wolf/reg"
+new File(filePath, "reg.groovy").eachLine { line ->
     println line
 }
