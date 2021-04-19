@@ -5,3 +5,4 @@ settings/
 .idea/
 *.ipr
 *.iws
+*.class
