@@ -183,7 +183,7 @@ assert accumulator(1) == 4
 def collect = [1, 2, 3, 4].collect {
     if (it % 2 == 0) return it * 2
 }
-println(collect)// groovy的closure中的return仅仅是返回closure所在的计算，对于使用它的函数不会退出
+println(collect)
 
 // the visitor pattern in groovy
 // 这个Visitor对象知道怎样遍历这个集合，也知道怎样为不同的类型执行商业逻辑函数，如果集合改变了或者逻辑函数随着时间而改变了，仅仅Visitor类是固定的

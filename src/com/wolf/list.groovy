@@ -16,6 +16,10 @@ assert numbers.class instanceof Class
     println "$i: $it"
 }
 
+['a', null, 'c'].eachWithIndex { it, int i ->
+    println "$i: $it"
+}
+
 assert [1, 2].collect { it * 2 } == [2, 4]
 
 assert [1, 2, 3].find { it > 1 } == 2// 找出第一个符合的

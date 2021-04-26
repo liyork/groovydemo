@@ -116,3 +116,8 @@ class Example {
         mp.each { println "${it.key} maps to ${it.value}" }
     }
 }
+
+def collect = [1, 2, 3, 4].collect {
+    if (it % 2 == 0) return it * 2
+}
+println(collect)// groovy的closure中的return仅仅是返回closure所在的计算，对于使用它的函数不会退出

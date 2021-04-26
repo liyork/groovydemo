@@ -75,29 +75,6 @@ interface AA {
     sayHello()
 }
 
-// 11 字符串和字符字面量
-// 单引号创建的字面量属于String类型对象
-// 双引号创建的字面量可能是String或GString("Groovy字符串"的简称)对象，由字面量中是否有插值决定
-// 通常，方法声明了形参的类型，Groovy会自动转换成GString和String。
-// 小心那些形参谓Object的，需要检查他们的实际类型
-assert 'c'.getClass() == String
-assert "c".getClass() == String
-assert "c${1}".getClass() in GString
-
-// a.两种字符串类型，普通字符串（java.lang.String）和插值字符串（groovy.lang.GString）
-// b.普通字符串使用单引号，不能占位符
-println 'hello'
-// 插值字符串使用双引号，可以有占位符
-def name = '张三'
-println "hello $name"
-
-// 三单引号，可以保留文本的换行及缩进格式
-def strippedFirstNewline = '''line one
-            line two 
-                    line three
-'''
-println strippedFirstNewline
-
 // 12 == 等价于equals
 // 支持Shebang line(UNIX系统支持一种特殊的单行注释,用于指明脚本的运行环境，便于在终端中可以直接运行)
 // 如 #!/user/bin/env groovy
