@@ -1,0 +1,8 @@
+# 模块逻辑名
+moduleName=price-module
+#用于检查该版本是否已经加载
+moduleVersion=1.0-text
+# 实例扩展，逗号分隔
+extensionClasses=com.wolf.pd.ext.extpack.PriceExtension
+# 静态方法扩展，逗号分隔
+staticExtensionClasses=com.wolf.pd.ext.extpack.PriceStaticExtension

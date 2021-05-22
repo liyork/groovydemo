@@ -1,0 +1,4 @@
+moduleName=price-module
+moduleVersion=1.0-text
+extensionClasses=com.wolf.pd.ext.extpack.PriceExtension
+staticExtensionClasses=com.wolf.pd.ext.extpack.PriceStaticExtension

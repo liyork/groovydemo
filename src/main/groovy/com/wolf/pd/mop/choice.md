@@ -1,0 +1,11 @@
+对于方法拦截：
+若有权修改类的源码，可以在类上实现GroovyInterceptable接口，实现invokeMethod
+若无法修改类，或那是个java类，可以使用ExpandoMetaClass或分类。
+
+对于方法注入：
+使用分类，可以控制注入方法的范围，不用的分类，可以实现不同版本的方法注入。
+若想在任意位置使用注入的方法，或想注入静态方法和构造器，ExpandoMetaClass更好。ExpandoMetaClass还可以向某个类的具体实例注入方法。
+
+对于方法合成：
+若有权修改类的源码，可以用methodMissing，也可以加上缓存。若同时需要拦截方法，实现GroovyInterceptable即可
+若无法修改类，或者那是个java类，可以将methodMissing添加到类的ExpandoMetaClass中，弱项同时拦截方法，可以在ExpandoMetaClass上实现invokeMethod。ExpandoMetaClass还可以将方法合成到某个类的具体实例中。
