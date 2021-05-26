@@ -2,7 +2,8 @@ package com.wolf.pd.interceptor
 
 import com.wolf.java.Car2
 
-// 若无权修改类，或这个类是Java类，或者在运行时决定基于某些条件或应用状态开始拦截调用。则要用metaClass拦截
+// 若无权修改类，或这个类是Java类，或者在运行时决定基于某些条件或应用状态开始拦截调用。则要用metaClass拦截，拦截的是从groovy的调用，因为
+// groovy的编译器进行编译的，并没有涉及到java的代码编译
 
 Car2.metaClass.invokeMethod = { String name, args ->// 拦截Car实例上的所有调用
     System.out.println "Call to $name intercepted..."
