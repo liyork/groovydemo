@@ -139,7 +139,10 @@ println str
 result = (str =~ /groovy/).replaceAll('hip')
 println result
 
-
+// 打印$
+println """
+${'$'}9.99
+"""
 
 
 

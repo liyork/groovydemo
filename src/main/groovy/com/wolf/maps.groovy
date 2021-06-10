@@ -12,4 +12,6 @@ bb.get('a').add(2)
 bb.get('b').add(1)
 println bb
 
-
+// dot使用
+def map = [a: 1, b: 2]
+assert [a: 1, b: 2, c: 3] == [c: 3, *: map]
