@@ -21,6 +21,8 @@ class GPathTest {
 
         assert list instanceof groovy.xml.slurpersupport.GPathResult
         assert list.technology.name == 'Groovy'
+        println list.technology.name.text()
+        println list.technology.zzz.text()// 属性没有不会报错
 
 // XmlSlurper evaluates the structure lazily. So if you update the xml you’ll have to evaluate the whole tree again.
 // GPath is a path expression language integrated into Groovy which allows parts of nested structured data to be identified. In this sense, it has similar aims and scope as XPath does for XML. The two main places where you use GPath expressions is when dealing with nested POJOs or when dealing with XML
@@ -33,6 +35,7 @@ class GPathTest {
                 <book available="20" id="1">
                     <title>Don Quixote</title>
                     <author id="1">Miguel de Cervantes</author>
+                    <isMain>true</isMain>
                 </book>
                 <book available="14" id="2">
                     <title>Catcher in the Rye</title>
@@ -65,6 +68,10 @@ class GPathTest {
         assert bookAuthorId1 == '1'
         assert bookAuthorId1.toInteger() == 1
         assert bookAuthorId1 == bookAuthorId2
+
+        println book1.isMain == "true"// 默认字符串
+        println book1.isMain.text().toBoolean() == true
+        println book1.isMain.toBoolean() == true// 可以直接toBoolean
 
 // *用children()直接节点，**用depthFirst()，参见GPathResult.getProperty
         def catcherInTheRye = response.value.books.'*'// 取得所有boos，可以用.children()替换
